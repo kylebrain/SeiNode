@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SeinNode</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="cssein.css" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="App">
+    <div ng-controller="MainController">
+        <div ng-show="showUp" class="modal" ng-click="hideUp()">
+            <form class="modal-content" name="signUp" ng-submit="newUser()" ng-click="$event.stopPropagation()">
+                <div class="imgcontainer">
+                    <img class="logo" src="seinfeld.png" />
+                    <span class="close" ng-click="showUp = false; userUp.name =''; userUp.pass=''">&times;</span>
+                </div>
+                <div class="container">
+                    <label><b>New Username</b></label>
+                    <input type="text" placeholder="Enter Username" ng-model="userUp.name" required>
+
+                    <label><b>New Password</b></label>
+                    <input type="password" placeholder="Enter Password" ng-model="userUp.pass" required>
+
+                    <button type="submit">Sign-Up</button>
+                    <span ng-show="invalidUser" class="error"> username not avaliable</span>
+                </div>
+            </form>
+        </div>
+
+
+
+        <div ng-show="showIn" class="modal" ng-click="hideIn()">
+            <form class="modal-content" name="logIn" ng-submit="getId()" ng-click="$event.stopPropagation()">
+                <div class="imgcontainer">
+                    <img class="logo" src="seinfeld.png" />
+                    <span class="close" ng-click="showIn = false; userIn.name =''; userIn.pass=''">&times;</span>
+                </div>
+                <div class="container">
+                    <label><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" ng-model="userIn.name" required>
+
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" ng-model="userIn.pass" required>
+
+                    <button type="submit">Login</button>
+                    <span ng-show="userNotFound" class="error"> invalid username/password</span>
+                </div>
+            </form>
+        </div>
+
+        <div class="contents">
+            <button class="generate"type="button" ng-click="random()">Generate Episode!</button>
+            <div class="gen" ng-show="generated">
+                <h2>Selected episode:</h2>
+                <h1>{{episode.season}}-{{episode.episode}}: <br class="breakmobile" />{{episode.title}}</h1>
+            </div>
+            <div>
+                <table>
+                    <caption class="{{caption}}"ng-click="watch()" ng-show="generated || watchedArray">{{watchMessage}} Watched:</caption>
+                    <tr ng-repeat="row in watchedArray">
+                        <td class="numbers" id="season">{{row.season}}</td>
+                        <td class="numbers" id="episode">{{row.episode}}</td>
+                        <td>{{row.title}}</td>
+                    </tr>
+                </table>
+                <button ng-show="watchedArray" type="button" ng-click="clear()">Clear Watched!</button>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li ng-click="showIn = !showIn; showUp = false">Login</li>
+                <li ng-click="showUp = !showUp; showIn = false">Sign-up</li>
+                <li ng-show="!tempUser" ng-click="logout()">Log-out</li>
+                <li ng-show="!tempUser" ng-click="deleteUser()">Delete User</li>
+                <li ng-show="!tempUser" class="user"><b>{{userLog.name}}</b></li>
+            </ul>
+        </div>
+        <h2 ng-show="!tempUser" class="usermobile">{{userLog.name}}</h2>
+    </div>
+</body>
+</html>

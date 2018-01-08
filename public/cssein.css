@@ -1,0 +1,253 @@
+﻿body {
+    background-color: #FCD81A;
+}
+
+ul {
+    list-style-type: none;
+    list-style: none;
+    background-color: #E4021C;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 5px;
+}
+
+li {
+    float: left;
+    margin: 0px 5px;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+button {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    outline: none;
+}
+
+.generate {
+    width: 40%;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+caption {
+    background-color: #E4021C;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+li, button {
+    background-color: #ba0015;
+}
+
+li, caption, button {
+    cursor: pointer;
+    color: white;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+    li:hover, caption:hover, button:hover {
+        background-color: #61CFCD;
+    }
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* The Modal (background) */
+.modal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    z-index: 2;
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: #ba0015;
+        cursor: pointer;
+    }
+
+.imgcontainer {
+    text-align: center;
+    margin-top: 24px;
+    position: relative;
+}
+
+.container {
+    padding: 22px;
+}
+
+img.logo {
+    width: 40%;
+}
+
+.error {
+    padding-left: 10px;
+    color: red;
+}
+
+.user {
+    float: right;
+    margin-right: 20px;
+}
+
+    .user:hover {
+        background-color: #ba0015;
+        cursor: default;
+    }
+
+table {
+    border-collapse: collapse;
+    border: none;
+    width: 20%;
+    margin: 20px auto;
+    min-width: 250px;
+}
+
+.header {
+    cursor: default;
+}
+
+    .header:hover {
+        background-color: #E4021C;
+    }
+
+td, th {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ba0015;
+    white-space: nowrap;
+    text-align: left;
+}
+
+.numbers {
+    text-align: center;
+    padding: 10px;
+    white-space: nowrap;
+    width: 5%;
+    font-style: italic;
+    border-right: 1px solid #ba0015;
+}
+
+#season {
+    font-weight: bold;
+}
+
+.contents {
+    margin: 15px auto 80px auto;
+    text-align: center;
+}
+
+.gen {
+    margin: 20px;
+}
+
+#watchedcheck {
+    text-align: center;
+}
+
+h1 {
+    color: #ba0015;
+    font-size: 40px;
+}
+
+h2 {
+    color: #414141;
+}
+
+.usermobile {
+    display: none;
+}
+
+.breakmobile {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    li {
+        display: inline;
+        padding: 14px 8px;
+        float: unset;
+        border: solid 1px black;
+        font-size: 14px;
+        margin: 0 2px;
+    }
+    .contents {
+        margin: 15px auto 70px auto;
+    }
+    ul {
+        text-align: center;
+        margin: 0;
+        left: 0;
+        bottom: 0;
+        padding: 11px 0;
+    }
+    .user{
+        display: none;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    .generate {
+        width: 95%;
+    }
+    .usermobile {
+        display: inherit;
+        position: fixed;
+        bottom: 25px;
+        left: 7px;
+        overflow: hidden;
+    }
+    .breakmobile {
+        display: inherit;
+    }
+    li:hover, button:hover {
+        background-color: #ba0015;
+    }
+    caption:hover {
+        background-color: #E4021C;
+    }
+}
